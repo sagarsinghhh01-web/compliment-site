@@ -1,24 +1,22 @@
-import { motion } from "framer-motion"
-import { Heart, MoveRight } from "lucide-react"
+import { motion } from "framer-motion";
+import { Heart, MoveRight } from "lucide-react";
 
 const compliments = [
-  "You look adorable",
-  "You have the sweetest vibe",
-  "You make things feel lighter",
-  "You are naturally charming",
-  "You make everything feel more special",
-]
+  "You look adorable babyyyy🤭😚",
+  "You have the sweetest chubby cheeks merii jaaaa",
+  "You make things feel lighter babyyyy",
+  "You are naturally charming🤗🧿",
+  "You make everything feel more special meriiii jaaaan❤️‍🔥❤️",
+];
 
 function Card({ text }) {
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1, }}
-      transition={{ delay: .5 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.5 }}
       className="relative px-4 py-3 rounded-2xl bg-white/5 border border-pink-500/15 text-foreground text-sm md:text-base shadow-[0_0_20px_rgba(0,0,0,0.25)] backdrop-blur-md overflow-hidden"
     >
-
       {/* text */}
       <motion.p
         transition={{ duration: 0.35 }}
@@ -27,16 +25,12 @@ function Card({ text }) {
         {text}
       </motion.p>
     </motion.div>
-  )
+  );
 }
 
-
 export default function ComplimentsScreen({ onNext }) {
-
   return (
-    <motion.div
-      className="flex flex-col items-center justify-center h-full w-full text-center"
-    >
+    <motion.div className="flex flex-col items-center justify-center h-full w-full text-center">
       <div className="w-full max-w-xl mx-auto flex flex-col items-center gap-8">
         {/* Center heart */}
         <motion.div
@@ -58,19 +52,12 @@ export default function ComplimentsScreen({ onNext }) {
           >
             Just for you
           </motion.h2>
-
         </div>
 
         {/* Compliments */}
-        <motion.div
-          className="grid grid-cols-1 gap-4 w-full px-4"
-        >
+        <motion.div className="grid grid-cols-1 gap-4 w-full px-4">
           {compliments.map((line, index) => (
-            <Card
-              key={index}
-              text={line}
-              index={index}
-            />
+            <Card key={index} text={line} index={index} />
           ))}
         </motion.div>
 
@@ -90,10 +77,7 @@ export default function ComplimentsScreen({ onNext }) {
             <MoveRight size={20} className="fill-current" />
           </motion.button>
         </motion.div>
-
       </div>
     </motion.div>
-  )
+  );
 }
-
-
